@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Secure Password Generator
 
 ## Description

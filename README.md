@@ -9,11 +9,19 @@ Weak passwords are one of the main reasons accounts get hacked. This tool helps 
 ## Features
 - Generate random passwords
 - Choose password length
-- Option to include/exclude:
+- Generate multiple passwords
+- Option to include or exclude:
   - letters
   - numbers
   - symbols
-- Uses secure randomness (`secrets` module)
+- Uses secure randomness with Python's `secrets` module
+
+## Technologies Used
+- Python 3
+- argparse
+- secrets
+- string
+- GitHub
 
 ## How to run
 

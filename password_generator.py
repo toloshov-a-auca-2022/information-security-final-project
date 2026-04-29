@@ -40,6 +40,13 @@ def main():
     )
 
     parser.add_argument(
+        "--count",
+        type=int,
+        default=1,
+        help="Number of passwords to generate"
+    )
+
+    parser.add_argument(
         "--no-letters",
         action="store_true",
         help="Do not use letters"
@@ -60,14 +67,19 @@ def main():
     args = parser.parse_args()
 
     try:
-        password = generate_password(
-            length=args.length,
-            use_letters=not args.no_letters,
-            use_numbers=not args.no_numbers,
-            use_symbols=not args.no_symbols
-        )
+        if args.count < 1:
+            raise ValueError("Count must be at least 1.")
 
-        print("Generated password:", password)
+        print("\nYour secure password(s):")
+
+        for _ in range(args.count):
+            password = generate_password(
+                length=args.length,
+                use_letters=not args.no_letters,
+                use_numbers=not args.no_numbers,
+                use_symbols=not args.no_symbols
+            )
+            print(password)
 
     except ValueError as error:
         print("Error:", error)
